@@ -65,7 +65,9 @@ public class Explosives{
     }
 
     //@ requires prod1.startsWith("Prod") && prod2.startsWith("Prod");
-    public boolean compatible(String prod1, String prod2){
+	//@ ensures ( (\result == true) ==> (\forall int d; 0 <= d && d < nb_inc; !(incomp[d][0].equals(prod1) && incomp[d][1].equals(prod2)) ) );
+	//@ ensures ( (\result == false) ==> (\exists int d; 0 <= d && d < nb_inc; incomp[d][0].equals(prod1) && incomp[d][1].equals(prod2) ) );
+	public boolean compatible(String prod1, String prod2){
     	for(int i = 0; i < nb_inc; i++)
     		if(incomp[i][0].equals(prod1) && incomp[i][1].equals(prod2)) return false;
     	return true;
