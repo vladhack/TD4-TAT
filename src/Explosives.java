@@ -87,7 +87,7 @@ public class Explosives{
     //@ requires Prod.startsWith("Prod");
     //@ ensures \result.startsWith("Bat");
     //@ ensures ( (\result.equals(newBat())) <==> !(\exists int d; 0<= d && d< nb_assign; (\forall int f; 0<= f && f< nb_assign; (assign[d][0].equals(assign[f][0])) ==> compatible(assign[f][1],Prod)) ) );
-    //@ ensures ( (\exists int d; 0<= d && d< nb_assign; (\result.equals(assign[d][0]))) <==> (\forall int f; 0<= f && f< nb_assign; ( (\result.equals(assign[f][0])) ==> (compatible(assign[f][1],Prod))) ) );
+    //@ ensures ( !(\result.equals(newBat())) <==> (\forall int f; 0<= f && f< nb_assign; (\forall int d; 0<= d && d< nb_assign; (assign[f][0].equals(assign[d][0])) ==> (compatible(assign[d][1],Prod)) ) ) );
     public String findBat(String Prod){
     	for(int i = 0; i < nb_assign; i++){
     		boolean compatible = true;

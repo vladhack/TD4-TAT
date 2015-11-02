@@ -2,10 +2,10 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
-	<classpathentry kind="lib" path="/home/smile/workspace/TAT-TD4Explosives/OpenJML/hamcrest-core-1.3.jar"/>
-	<classpathentry kind="lib" path="/home/smile/workspace/TAT-TD4Explosives/OpenJML/jmlspecs.jar"/>
-	<classpathentry kind="lib" path="/home/smile/workspace/TAT-TD4Explosives/OpenJML/junit-4.12.jar"/>
-	<classpathentry kind="lib" path="/home/smile/workspace/TAT-TD4Explosives/OpenJML/openjml.jar"/>
 	<classpathentry kind="var" path="OPENJML_RUNTIME_LIBRARY"/>
+	<classpathentry kind="lib" path="/home/smile/git/TD4-TAT/OpenJML/hamcrest-core-1.3.jar"/>
+	<classpathentry kind="lib" path="/home/smile/git/TD4-TAT/OpenJML/jmlspecs.jar"/>
+	<classpathentry kind="lib" path="/home/smile/git/TD4-TAT/OpenJML/junit-4.12.jar"/>
+	<classpathentry kind="lib" path="/home/smile/git/TD4-TAT/OpenJML/openjml.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
