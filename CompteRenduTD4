@@ -1,0 +1,32 @@
+COMPTE RENDU TD4 TAT
+
+QUESTION 1
+
+Prop 1:
+Il y a entre 0 et 50 incompatibilités possibles entre produits.
+
+Prop 2:
+Il y a entre 0 et 30 affections de produits possibles dans les bâtiments.
+(Il y a 30 places pour les produits dans les bâtiments)
+
+Prop 3:
+Les incompatibilités ne sont possibles qu'entre deux produits (variables commençant par "Prod").
+Le tableau des incompatibilités "incomp" ne contient que des paires de produits.
+
+Prop 4:
+Les affectations ne sont possibles qu'entre un bâtiment(variable commençant par "Bat") et un produit.
+Le tableau des affectations "assign" ne contient que des couples <Bâtiment, Produit>.
+
+Prop 5:
+Un produit ne peut pas être incompatible avec lui même.
+Un produit est compatible avec lui même.
+Le tableau d'incompatibilité ne contient aucune paire de deux(2) même produit.
+
+Prop 6:
+Si un produit ProdA est incompatible avec un produit ProdB alors le produit prodB est incompatible avec le produit ProdA.
+Pour tout couple d'incompatibilité entre 2 produits <ProdA, ProdB> dans le tableau d'incompatibilité, il exite le couple d'incompatibilité <ProdB, ProdA> dans le tableau d'incompatibilité.
+
+Prop 7:
+Pour tous produits ProdA et ProdB, tous deux présents dans le même bâtiment Bat1, les produits A et B sont incompatibles.
+Pour toutes paires <Bat1, ProdA> et <Bat1, ProdB>, toutes deux présentes dans le tableau d'affectations "assign", le couple <ProdA, ProdB> n'existe pas dans le tableau d'incompatibilité "incomp".
+
