@@ -78,6 +78,8 @@ public class TestExplosivesJUnit4 {
 			e=new Explosives();
 			for(int i=0; i<=30; i++){
 				e.add_assign("Bat_1","Prod_Nitro");
+				// c logique
+				// e.add_assign("Bat_"+i,"Prod_"+i);
 			}
 		} 	catch(JmlAssertionError e){
 				handleJMLAssertionError(e);		
