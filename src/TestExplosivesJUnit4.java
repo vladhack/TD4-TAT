@@ -63,7 +63,7 @@ public class TestExplosivesJUnit4 {
 	public void  testSequence_1() {
 		try{
 			e=new Explosives();
-			for(int i=0; i<=50; i++){
+			for(int i=0; i<=25; i++){
 				e.add_incomp("Prod_Mite","Prod_Nitro");
 			}
 		} 	catch(JmlAssertionError e){

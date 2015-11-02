@@ -42,6 +42,7 @@ public class TestExplosivesJUnit4Public {
 	     System.out.println("\n inconclusive tests: "+nb_inconclusive+" -- failures : "+nb_fail );
 	}
 	
+	//Test invalidant l'invariant Prop6
 	@Test
 	public void  testSequence_6() {
 		try{
@@ -49,7 +50,7 @@ public class TestExplosivesJUnit4Public {
 			e.add_incomp("Prod_Mite","Prod_Nitro");
 			e.incomp[e.nb_inc-1][0]= null;
 			e.incomp[e.nb_inc-1][1]= null;
-			e.nb_inc =e.nb_inc-1;
+			e.nb_inc--;
 			e.skip();
 		} 	catch(JmlAssertionError e){
 				handleJMLAssertionError(e);		
