@@ -43,16 +43,79 @@ public class TestExplosivesFindBat {
 	}
 	
 	@Test
-	public void  testSequence_1() {
+	public void testFindBat1() {
 		try{
 			e=new Explosives();
-			e.add_incomp("Prod_Mite","Prod_Nitro");
-			e.add_assign("Bat_1", "Prod_Mite");
-			e.add_assign("Bat_1", "Prod_Dynamite");
-			System.out.println(e.findBat("Prod_Nitro"));
-			System.out.println(e.findBat("Prod_Ex"));
-		} 	catch(JmlAssertionError e){
-				handleJMLAssertionError(e);		
-		}  
+			assertEquals(e.newBat(), e.findBat("Prod_Mite"));	
+		}   catch(JmlAssertionError e){
+			handleJMLAssertionError(e);		
+		} 
 	}
+
+	@Test
+	public void testFindBat2() {
+		try{
+			e=new Explosives();
+			e.add_incomp("Prod_Mite","Prod_Dynamite");
+			assertEquals(e.newBat(), e.findBat("Prod_Mite"));	
+		}   catch(JmlAssertionError e){
+			handleJMLAssertionError(e);		
+		} 
+	}
+
+	@Test
+	public void testFindBat3() {
+		try{
+			e=new Explosives();
+			e.add_incomp("Prod_Mite","Prod_Dynamite");
+			e.add_assign("Bat_1","Prod_Nitro");
+			assertEquals("Bat_1", e.findBat("Prod_Mite"));	
+		}   catch(JmlAssertionError e){
+			handleJMLAssertionError(e);		
+		} 
+	}
+
+	@Test
+	public void testFindBat4() {
+		try{
+			e=new Explosives();
+			e.add_incomp("Prod_Mite","Prod_Dynamite");
+			e.add_assign("Bat_1","Prod_Dynamite");
+			assertEquals("Bat_1", e.findBat("Prod_Nitro"));	
+		}   catch(JmlAssertionError e){
+			handleJMLAssertionError(e);		
+		} 
+	}
+
+	@Test
+	public void testFindBat5() {
+		try{
+			e=new Explosives();
+			e.add_incomp("Prod_Mite","Prod_Dynamite");
+			e.add_incomp("Prod_Mite","Prod_TNT");
+			e.add_assign("Bat_1","Prod_Dynamite");
+			e.add_assign("Bat_2","Prod_TNT");
+			e.add_assign("Bat_2","Prod_Nitro");
+			e.add_assign("Bat_3","Prod_Nitro");
+			assertEquals("Bat_3", e.findBat("Prod_Mite"));	
+		}   catch(JmlAssertionError e){
+			handleJMLAssertionError(e);		
+		} 
+	}
+
+	@Test
+	public void testFindBat6() {
+		try{
+			e=new Explosives();
+			e.add_incomp("Prod_Mite","Prod_Dynamite");
+			e.add_assign("Bat_1","Prod_Dynamite");
+			e.add_assign("Bat_2","Prod_Nitro");
+			e.add_assign("Bat_2","Prod_Glycerine");
+			e.add_assign("Bat_2","Prod_TNT");
+			assertEquals("Bat_2", e.findBat("Prod_Mite"));	
+		}   catch(JmlAssertionError e){
+			handleJMLAssertionError(e);		
+		} 
+	}
+
 }

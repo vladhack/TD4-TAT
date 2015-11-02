@@ -74,7 +74,7 @@ public class Explosives{
     }
     
     //@ ensures (\forall int f; 0<= f && f< nb_assign; !(\result.equals(assign[f][0])));
-    public String newBat(){
+    public String  newBat(){
     	int cmpt = 0;
     	boolean alreadyExists = true;
     	while(alreadyExists){
@@ -88,8 +88,8 @@ public class Explosives{
     
     //@ requires Prod.startsWith("Prod");
     //@ ensures \result.startsWith("Bat");
-    //@ ensures ( (\result.equals(newBat())) <==> !(\exists int d; 0<= d && d< nb_assign; (\forall int f; 0<= f && f< nb_assign; (assign[d][0].equals(assign[f][0])) ==> compatible(assign[f][1],Prod)) ) );
-    //@ ensures ( !(\result.equals(newBat())) <==> (\forall int f; 0<= f && f< nb_assign; (\forall int d; 0<= d && d< nb_assign; (assign[f][0].equals(assign[d][0])) ==> (compatible(assign[d][1],Prod)) ) ) );
+    //@ ensures (nb_assign > 0) ==> ( (\result.equals(newBat())) <==> !(\exists int d; 0<= d && d< nb_assign; (\forall int f; 0<= f && f< nb_assign; (assign[d][0].equals(assign[f][0])) ==> compatible(assign[f][1],Prod)) ) ) || ( !(\result.equals(newBat())) <==> (\forall int f; 0<= f && f< nb_assign; (\forall int d; 0<= d && d< nb_assign; (assign[f][0].equals(assign[d][0])) ==> (compatible(assign[d][1],Prod)) ) ) );
+    //@ ensures (nb_assign == 0) ==> ( \result.equals(newBat()) );
     public String findBat(String Prod){
     	for(int i = 0; i < nb_assign; i++){
     		boolean compatible = true;
